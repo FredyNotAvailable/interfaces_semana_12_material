@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>{{ data.titulo }}</h2>
+<mat-dialog-content>
+  @if (data.tipo === 'detalle' && data.usuario) {
+    <p><strong>Nombre:</strong> {{ data.usuario.nombre }}</p>
+    <p><strong>Email:</strong> {{ data.usuario.email }}</p>
+    <p><strong>Rol:</strong> {{ data.usuario.rol }}</p>
+    <p><strong>Fecha de registro:</strong> {{ data.usuario.fechaRegistro }}</p>
+  } @else {
+    <p>{{ data.mensaje }}</p>
+  }
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  @if (data.tipo === 'eliminar') {
+    <button mat-button (click)="cancelar()">Cancelar</button>
+    <button mat-raised-button color="warn" (click)="confirmar()">Eliminar</button>
+  } @else {
+    <button mat-raised-button color="primary" (click)="confirmar()">Cerrar</button>
+  }
+</mat-dialog-actions>

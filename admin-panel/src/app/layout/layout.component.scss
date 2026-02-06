@@ -1,0 +1,33 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 240px;
+}
+
+.sidenav-toolbar {
+  min-height: 56px;
+}
+
+.main-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .toolbar-title {
+    margin-left: 0.5rem;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.content {
+  padding: 1.5rem;
+  min-height: calc(100vh - 56px);
+  box-sizing: border-box;
+}
+
+mat-nav-list a.active {
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.04);
+}
